@@ -1,2 +1,3 @@
-# Electron-Simple-App
- A Simple sleak and smexy Electron template
+# Electron Simple App
+## By SNOOT (NovaAppsInc)
+A simple sleak and smexy Electron UI template

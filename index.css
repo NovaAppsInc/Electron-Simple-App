@@ -1,0 +1,125 @@
+@font-face {
+    font-family: Inter;
+    src: url(./Inter.ttf);
+}
+
+html {
+    height: 100%;
+    font-family: Inter;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+[wrapper] {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #212121;
+    color: #ebebeb;
+    overflow: hidden;
+}
+
+[dragger] {
+    height: 38px;
+    width: 100%;
+    -webkit-app-region: drag;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.controls {
+    display: flex;
+    position: absolute;
+    gap: 8px;
+    right: 8px;
+    -webkit-app-region: no-drag;
+}
+
+[light] {
+    background-color: #ffffff85;
+    border-radius: 100%;
+    height: 18px;
+    width: 18px;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+}
+
+[light]:hover {
+    background-color: #ffffffd5;
+}
+
+[close]:hover {
+    background-color: #ff6363;
+}
+
+[appTitle] {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    left: 8px;
+}
+
+.main {
+    overflow: auto;
+    height: 100%;
+    padding: 0 8px 8px 8px;
+}
+
+.main::-webkit-scrollbar-track {
+    background-color: #212121;
+}
+
+.main::-webkit-scrollbar {
+    width: 10px;
+    background-color: #212121;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background-color: #424242;
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+    background-color: #616161;
+}
+
+.main::-webkit-scrollbar-corner {
+    background-color: #212121;
+}
+
+mark {
+    padding: 4px;
+    border-radius: 4px;
+}
+
+button[small] {
+    background-color: #5088ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 20px;
+    font-family: Inter;
+}
+
+button[medium] {
+    background-color: #5088ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 20px;
+    font-family: Inter;
+}
+
+button[big] {
+    background-color: #5088ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 20px;
+    font-family: Inter;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "electron-simple-app",
+  "version": "1.0.0",
+  "description": "A Simple sleak and smexy Electron UI template",
+  "main": "window.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NovaAppsInc/Electron-Simple-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NovaAppsInc/Electron-Simple-App/issues"
+  },
+  "homepage": "https://github.com/NovaAppsInc/Electron-Simple-App#readme",
+  "dependencies": {
+    "electron": "^22.0.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^23.6.0"
+  }
+}
