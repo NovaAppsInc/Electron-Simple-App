@@ -14,16 +14,15 @@ const createWindow = () => {
     roundedCorners: true,
     frame: false,
     show: false,
-    thickFrame: true,
     transparent: true,
     webPreferences: {
         nodeIntegration: true,
         devTools: true,
         contextIsolation: false
-    },
-    scrollBounce: true
+    }
   });
 
+  mainWindow.webContents.openDevTools();
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
   mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.show();
@@ -44,6 +43,52 @@ const createWindow = () => {
         BrowserWindow.getFocusedWindow().maximize();
     }
   });
+
+  ipc.on('prompt', (event, obj) => {
+    const promptWindow = new BrowserWindow({
+      width: 400,
+      height: 200,
+      frame: false,
+      transparent: true,
+      roundedCorners: true,
+      resizable: false,
+      minimizable: false,
+      maximizable: false,
+      show: false,
+      webPreferences: {
+        nodeIntegration: true,
+        devTools: true,
+        contextIsolation: false
+      }
+    })
+    promptWindow.loadFile(path.join(__dirname, '/prompt/prompt.html'));
+    promptWindow.webContents.on('did-finish-load', () => {
+      promptWindow.show();
+      promptWindow.webContents.send('prompt-args', obj);
+    })
+
+    ipc.on("prompt-close", () => {
+      BrowserWindow.getFocusedWindow().close();
+    })
+
+    ipc.on("prompt-submit", (event, arg) => {
+      mainWindow.webContents.send("prompt-submit", arg);
+      BrowserWindow.getFocusedWindow().close();
+    })
+
+    ipc.on("prompt-cancel", () => {
+      mainWindow.webContents.send("prompt-cancel");
+      BrowserWindow.getFocusedWindow().close();
+    })
+
+    ipc.on("alert-ok", () => {
+      BrowserWindow.getFocusedWindow().close();
+    })
+
+    app.on("ready", () => {
+      promptWindow();
+    })
+  })
 };
 
 app.on('ready', () => {

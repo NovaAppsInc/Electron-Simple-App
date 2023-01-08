@@ -1,0 +1,151 @@
+@font-face {
+    font-family: Inter;
+    src: url(../Inter.ttf);
+}
+
+html {
+    height: 100%;
+    font-family: Inter;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+[wrapper] {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #212121;
+    color: #ebebeb;
+    overflow: hidden;
+    box-shadow: inset 0 0 1px 1.5px #ffffff85;
+}
+
+[dragger] {
+    height: 38px;
+    width: 100%;
+    -webkit-app-region: drag;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+[controls] {
+    display: flex;
+    position: absolute;
+    gap: 8px;
+    right: 8px;
+    -webkit-app-region: no-drag;
+}
+
+[light] {
+    background-color: #ffffff85;
+    border-radius: 100%;
+    height: 18px;
+    width: 18px;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+}
+
+[light]:hover {
+    background-color: #ffffffd5;
+}
+
+[close]:hover {
+    background-color: #ff6363;
+}
+
+[prompt-title] {
+    display: flex;
+    font-size: 16px;
+    margin-left: 12px;
+    gap: 8px;
+    align-items: center;
+}
+
+[icon] {
+    height: 20px;
+    width: max-content;
+}
+
+[prompt-content] {
+    position: relative;
+    height: calc(100% - 38px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+[input-container] {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+[message] {
+    user-select: none;
+}
+
+[prompt-input] {
+    border: none;
+    background-color: #ffffff2e;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 10px 16px 10px 10px;
+    transition: 200ms ease-in-out;
+    text-align: center;
+}
+
+[prompt-input]:focus {
+    outline: none;
+}
+
+[prompt-input]:focus-visible {
+    background-color: transparent;
+    box-shadow: inset 0 0 1px 1.5px #ffffff42;
+    text-align: left;
+}
+
+[prompt-input]:not(:focus-visible):hover {
+    background-color: #ffffff2e;
+    box-shadow: inset 0 0 1px 1.5px #55a4ff8e;
+}
+
+[button-container] {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    display: flex;
+    gap: 4px;
+}
+
+[prompt-button] {
+    user-select: none;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 8px 10px 8px 10px;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+}
+
+[prompt-button]:hover {
+    background-color: #ffffff2e;
+}
+
+[prompt-button]:active {
+    background-color: #ffffff2e;
+    box-shadow: inset 0 0 1px 1.5px #55a4ff8e;
+}
+
+b {
+    font-weight: 600;
+}

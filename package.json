@@ -4,7 +4,8 @@
   "description": "A Simple sleak and smexy Electron UI template",
   "main": "window.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder build"
   },
   "repository": {
     "type": "git",
