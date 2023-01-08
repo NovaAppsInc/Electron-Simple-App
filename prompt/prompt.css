@@ -149,3 +149,10 @@ body {
 b {
     font-weight: 600;
 }
+
+[alert-container] {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
